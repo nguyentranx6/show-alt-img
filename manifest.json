@@ -1,0 +1,23 @@
+{
+  "name": "Show Alt Img",
+  "version": "1.0",
+  "description": "Simple extension show alt of all img on page",
+  "author": "Johan Nguyen",
+  "homepage_url": "https://johannguyen.dev",
+  "permissions": ["activeTab", "<all_urls>", "tabs"],
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+  "background": {
+    "page": "background.html",
+    "persistant": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["app.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "manifest_version": 2
+}
